@@ -1,50 +1,125 @@
 // Logo
 .logo {
     height: 3.25rem;
+    margin-left: 2rem;
 }
 
 // search
 .search {
+    flex: 0 0 40%;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
     &__button {
-        
+        border: none;
+        background-color: var(--color-grey-light-2);
+
+        &:focus {
+            outline: none;
+        }
+
+        &:active {
+            transform: translateY(2px);
+        }
 
     }
 
     &__input {
+        font-size: inherit;
+        font-family: inherit;
+        background-color: var(--color-grey-light-2);
+        color: inherit;
+        border: none;
+        padding: .7rem 2rem;
+        border-radius: 100px;
+        width: 90%;
+        transition: all .2s;
+        margin-right: -3.25rem;
 
+        &:focus {
+            outline: none;
+            width: 100%;
+            background-color: var(--color-grey-light-3);
+        }
+
+        
+    }
+
+    &__input:focus + &__button {
+        background-color: var(--color-grey-light-3);
+    }
+
+    &__input::-webkit-input-placeholder {
+        font-size: inherit;
+        color: var(--color-grey-light-4);
+        font-weight: 100;
     }
 
     &__icon {
         height: 2rem;
         width: 2rem;
+        fill: var(--color-grey-dark-3); // fill keyword is used to fill color for svg icons
     }
 }
 
 // user navigation
 .user-nav {
+    align-self: stretch;
+
+    display: flex;
+    align-items: center; // we are overriding align-items: center property defined in header. which will result in increasing the height of user-nav icons 
+    
+
+    & > * { // used to select all the direct child emements of user-nav which are user-nav__icon-box, user-nav__icon-box and user-nav__user
+        padding: 0 2rem;
+        cursor: pointer;
+        height: 100%;
+    }
+
+    & > *:hover {
+        background-color: var(--color-grey-light-2);
+    } 
 
     &__icon {
         height: 2.25rem;
         width: 2.25rem;
+        fill: var(--color-grey-dark-2);
     }
 
     &__icon-box {
+        display: flex;
+        align-items: center;
+        position: relative;
 
     }
 
     &__notification {
+        font-size: .8rem;
+        height: 1.75rem;
+        width: 1.75rem;
+        border-radius: 50%;
+        color: #fff;
+        background-color: var(--color-primary);
+        position: absolute;
+        top: 1.5rem;
+        right: 1.1rem;
 
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     &__user {
-  
+        display: flex;
+        align-items: center;
     }
 
     &__user-photo {
         height: 3.75rem;
         border-radius: 50%;
+        margin-right: 1rem;
     }
 
     &__user-name {
@@ -52,3 +127,4 @@
     }
 
 }
+
