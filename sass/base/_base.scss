@@ -31,7 +31,17 @@ Grey dark 3: #999
     --color-grey-dark-3: #999;
 
     --shadow-dark: 0 2rem 6rem rgba(0,0,0, .3);
+    --shadow-light: 0 2rem 5rem rgba(0,0,0,.06);
+
+    --line: 1px solid var(--color-grey-light-2);
+
 }
+
+$bp-largest: 75em; // 1200px = 1200/10 = 120rem = 1200/16 = 75em
+$bp-large: 71.88em; // 1150px = 1150/10 = 115rem = 1150/16 = 71.875em
+$bp-medium: 58.13em; // 930px = 930/10 = 93rem = 930/16 = 58.125em
+$bp-medium2: 56.69em; // 907px = 907/16px = 56.6875em
+$bp-small: 37.5em; // 600px
 
 * {
     margin: 0;
@@ -48,6 +58,9 @@ html {
     box-sizing: border-box;
     font-size: 62.5%; // 1rem = 10px, 10px/16px = 0.625 = 62.5%
 
+    @media only screen and (max-width: $bp-large) {
+        font-size: 50%;    // 1rem = 8px, 8px/16px = 0.50 = 50%        
+    }
 }
 
 body {
